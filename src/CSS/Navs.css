@@ -1,0 +1,116 @@
+.next_Page{
+    position: absolute;
+    width: auto;
+    height: 4%;
+    top: 13%;
+    right: 35%;
+    font-size: 13pt;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.prev_Page{
+    position: absolute;
+    width: auto;
+    font-size: 13pt;
+    height: 4%;
+    top: 17%;
+    left: 28%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.nav{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    font-size: 45pt;
+}
+.container_direita{
+    position: fixed;
+    top: 44%;
+    cursor: pointer;
+    right: 2%;
+    width: 15%;
+    height: 12%;
+    color: rgba(215, 215, 215, 0.8);
+    transition: all 0.2s ease-in-out;
+}
+.container_direita.animar{
+    animation: moveNav 2s  infinite;
+    animation-delay: 1s;
+}
+.container_direita:hover .next_Page{
+    opacity: 1;
+}
+.container_direita:hover {
+    color: white;
+    right: 1%;
+    animation: none;
+}
+.direita{
+    right: 2%;
+    top: 0;
+}
+
+.container_esquerda{
+    position: fixed;
+    top: 44%;
+    cursor: pointer;
+    left: 2%;
+    width: 15%;
+    height: 12%;
+    color: rgba(215, 215, 215, 0.8);
+    transition: all 0.2s ease-in-out;
+}
+.container_esquerda.animar{
+    animation: moveNav 2s  infinite;
+}
+.container_esquerda:hover .prev_Page{
+    opacity: 1;
+}
+.container_esquerda:hover{
+    color: white;
+    left: 1%;
+    animation: none;
+}
+.esquerda{
+    left: 2%;
+    top: 5%;
+}
+
+
+@keyframes moveNav{
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+        transform: translateX(7px);
+    }
+    100% {
+        transform: translateX(0);
+      }
+}
+
+@keyframes moveNav2{
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-7px);
+    }
+    100% {
+        transform: translateX(0);
+      }
+}
+
+
+/* responsividade */
+
+@media only screen and (max-width: 600px) {
+    
+    .container_direita{
+        display: none;
+    } 
+    .container_esquerda{
+        display: none;
+    }
+  }

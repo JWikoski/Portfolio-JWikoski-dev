@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './CSS/index.css';
+import Menu from './Components/MenuPrincipal';
+import Portfolio from './Components/Portfolio';
+import Projetos from './Components/Projetos';
+import Navs from './Components/Navs';
+import SobreMim from './Components/SobreMim';
 import reportWebVitals from './reportWebVitals';
+import TouchDetector from './Components/TouchDetector';
+import { MyContextProvider } from "./Components/Context";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MyContextProvider>
+      <TouchDetector>
+          <Menu />
+          <Projetos />
+          <Navs />
+          <Portfolio />
+          <SobreMim />
+      </TouchDetector>
+    </MyContextProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

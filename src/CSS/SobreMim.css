@@ -1,0 +1,113 @@
+.container_status{
+    position: fixed;
+    width: 60%;
+    left: 20%;
+    height: 65%;
+    top: 20%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(15%);
+    box-shadow: 18px 18px 15px rgb(15, 15, 15); 
+    border-radius: 30px;
+    transition: all 0.4s ease-in-out;
+}
+.container_status.open{
+    pointer-events: all;
+    opacity: 1;
+    transition-delay: 0.4s;
+    transform: translateX(0);
+}
+.div_esquerda{
+    position: absolute;
+    backdrop-filter: blur(35px);
+    border-radius: 30px 0 0 30px;
+    height: 100%;
+    width: 60%;
+    color: rgba(235, 235, 235, 0.9);
+    background-color: rgba(71, 71, 71, 0.5);
+}
+.div_direita{
+    position: absolute;
+    backdrop-filter: blur(35px);
+    text-align: center;
+    border-radius: 0 30px 30px 0;
+    height: 100%;
+    left: 60%;
+    width: 40%;
+    color: rgba(215, 215, 215, 0.8);
+    background-color: rgba(43, 43, 43, 0.5);
+}
+.content_icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+    overflow: auto;
+}
+.texto_sobre{
+    height: 60%;
+    padding: 60px;
+    font-size: 13pt;
+}
+.icon{
+    position: relative;
+    margin-left: 20%;
+    font-size: 22pt;
+    padding-right: 35px;
+}
+.text_destaque{
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    padding: 50px 10px 0 10px;
+}
+.contacts.open{
+  position: fixed;
+  transition: all 0.4s ease-in-out;
+}
+.contacts.closed{
+  opacity: 0;
+  pointer-events: none;
+}
+.contacts.sobreMim{
+    opacity: 1;
+    top: 75% !important;
+    left: 30% !important;
+    transition: all 0.8s ease-in-out;
+}
+
+
+/* responsividade */
+
+@media only screen and (max-width: 600px) {
+.container_status{
+    width: 90%;
+    left: 5%;
+    overflow: auto;
+}
+.div_esquerda{
+    position: relative;
+    margin: 0;
+    height: auto;
+    overflow: auto;
+    border-radius: 0 0 30px 30px;
+    border-top: 1px solid rgba(200, 200, 200, 0.5);
+    backdrop-filter: none;
+    width: 100%;
+}
+.div_direita{
+    position: relative;
+    backdrop-filter: none;
+    height: 80%;
+    border-radius: 30px 30px 0 0;
+    left: 0;
+    width: 100%;
+}
+.texto_sobre{
+    padding: 35px;
+    font-size: 15pt;
+}
+.text_destaque{
+    padding: 35px 10px 0 10px;
+}
+}

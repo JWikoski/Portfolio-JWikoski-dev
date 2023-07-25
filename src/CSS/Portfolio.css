@@ -1,0 +1,196 @@
+:global(strong) {
+  color: white !important;
+}
+.portfolio_inicial{
+  position: absolute;
+  opacity: 0;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+  transform: translateX(-25%);
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+.portfolio_inicial.open{
+  opacity: 1;
+  pointer-events: all;
+  transition-delay: 0.4s;
+  transform: translateX(0);
+}
+.sec_apresent{
+  position: absolute;
+  top: 6%;
+  width: 40%;
+  height: 10%;
+}
+.titulo{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(215, 215, 215, 0.8);
+  font-size: 20pt;
+}
+.tip_2{
+  color: rgb(215, 215, 215);
+  top: 20%;
+  width: auto;
+  margin: 0;
+  font-size: 70pt;
+}
+.tip_2:before{
+  content: '';
+  display: block;
+  width: 100%;
+  border-right: 2px solid red;
+  animation: tipos_dev 9s infinite, cursor 1s infinite, write 3s steps(10) infinite; 
+  overflow: hidden;
+  padding-right: 5px;
+  white-space: nowrap;
+}
+.tip_3{
+  color: rgb(215, 215, 215);
+  top: 40%;
+  margin: 0;
+  font-size: 80pt;
+}
+.contacts.show{
+opacity: 0;
+pointer-events: none;
+}
+.contacts{
+  position: absolute;
+  display: flex;
+  left: 35%;
+  top: 10%;
+  width: 65%;
+  height: 10%;
+}
+.social_media{
+  flex: 3;
+  font-size: 22pt;
+  padding: 2px 20px 2px 20px;
+  position: relative;
+  top: 10%;
+  cursor: pointer;
+  color: rgb(190, 190, 190);
+  transition: all 0.2s ease-in-out;
+}
+.social_media:hover{
+  color: rgb(255, 255, 255);
+  transform: translateY(-5px);
+}
+.resumo_sobre{
+  position: absolute;
+  left: 0;
+  width: 60%;
+  color: rgba(200, 200, 200, 0.8);
+  font-size: 15pt;
+  bottom: 35px;
+}
+.desliza{
+  position: fixed;
+  font-size: 11pt;
+  color: rgba(200, 200, 200, 0.8);
+  width: 80%;
+  height: 5%;
+  right: 0;
+  top: 75%;
+}
+.icon_pointer{
+  font-size: 20pt;
+  animation: deslizar 1.2s infinite;
+}
+
+@keyframes deslizar {
+  0% {
+    opacity: 1;
+    transform: rotate(-5deg) translateX(270%);
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(5deg) translateX(80%);
+  }
+}
+
+@keyframes cursor{
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(209, 209, 209);
+  }
+}
+
+@keyframes tipos_dev{
+  0%,33%{
+    content: 'Front-End';
+  } 
+  34%,67%{
+    content: 'React';
+  }
+  68%,100%{
+    content: 'C# (C Sharp)';
+  }
+}
+
+@keyframes write{
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 100%;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+
+/* responsividade */
+
+@media only screen and (max-width: 600px) {
+  .portfolio_inicial{
+    left: 15%;
+    width: 70%;
+    top: 15%;
+    height: 85%;
+    overflow: hidden;
+  }
+  .sec_apresent{
+    width: 100%;
+  }
+  .contacts{
+    left: 0;
+    top: 85%;
+    margin: 25px 0 25px 0;
+    justify-content: center;
+    width: 100%;
+  }
+  .titulo{
+    position: relative;
+    font-size: 16pt;
+  }
+  .tip_2{
+    position: relative;
+    top: 15%;
+    font-size: 35pt;
+  }
+  .resumo_sobre{
+    width: 100%;
+    font-size: 13pt;
+    bottom: 35%;
+  }
+  .tip_3{
+    position: relative;
+    top: 15%;
+    font-size: 40pt;
+  }
+}
